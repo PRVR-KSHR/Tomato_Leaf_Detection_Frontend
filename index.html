@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Leaf Disease Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍅 Tomato Leaf Disease Detection</h1>
+            <p class="subtitle">Upload an image of a tomato leaf to detect diseases</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                        </svg>
+                        <p class="upload-text">Click to upload or drag and drop</p>
+                        <p class="upload-hint">PNG, JPG or JPEG (MAX. 10MB)</p>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                </div>
+
+                <div class="image-preview" id="imagePreview" style="display: none;">
+                    <img id="previewImg" src="" alt="Preview">
+                    <button class="remove-btn" id="removeBtn">✕</button>
+                </div>
+
+                <button class="predict-btn" id="predictBtn" disabled>
+                    <span class="btn-text">Analyze Image</span>
+                    <span class="loader" style="display: none;"></span>
+                </button>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>Detection Results</h2>
+                
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <h3>Diagnosis</h3>
+                    </div>
+                    <div class="prediction-result" id="predictionResult">
+                        <div class="disease-name" id="diseaseName"></div>
+                        <div class="confidence" id="confidence"></div>
+                    </div>
+                </div>
+
+                <div class="probabilities-card">
+                    <h3>Confidence Breakdown</h3>
+                    <div class="probability-bars" id="probabilityBars"></div>
+                </div>
+
+                <div class="info-card" id="infoCard">
+                    <h3>About This Disease</h3>
+                    <div class="disease-info" id="diseaseInfo"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by ViTAgriNet Model | Built with PyTorch</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
