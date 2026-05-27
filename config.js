@@ -5,7 +5,7 @@
 const CONFIG = {
     API_URL: window.location.hostname === 'localhost' 
         ? 'http://localhost:5000'
-        : 'https://your-backend-url.onrender.com' // Replace with your actual backend URL
+        : 'https://tomato-disease-api.onrender.com'  // ← Replace with your actual Render URL if different
 };
 
 // Export for use in script.js
