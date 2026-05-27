@@ -1,5 +1,5 @@
-// API Configuration
-const API_URL = 'http://localhost:5000';
+// API Configuration - Set via config.js
+const API_URL = window.CONFIG?.API_URL || 'http://localhost:5000';
 
 // Disease information database
 const diseaseInfo = {
